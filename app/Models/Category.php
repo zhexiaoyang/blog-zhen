@@ -11,11 +11,16 @@ class Category extends Model
     use ModelTree, AdminBuilder;
 
     protected $fillable = [
-        'name', 'description', 'parent_id', 'is_display',
-        'order', 'icon'
+        'title', 'image', 'description', 'user_id','category_id', 'is_display', 'order', 'excerpt'
     ];
 
     protected $casts = [
-        'is_display' => 'boolean', // on_sale 是一个布尔类型的字段
+        'is_display' => 'boolean',
     ];
+
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

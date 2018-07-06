@@ -93,7 +93,7 @@ class CategoryController extends Controller
             $form->text('title', '分类名称')->rules('required');
 //            $form->icon('icon', '图标')->default('fa-bars')->rules('required')->help('温馨提示：balbal');
             $form->text('description', '描述')->default('');
-            $form->text('order', '排序')->default(100);
+            $form->text('order', '排序')->default(100)->rules('required');
             $form->radio('is_display', '是否显示')->options(['1' => '是', '0'=> '否'])->default('0');
 
 
