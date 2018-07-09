@@ -26,4 +26,18 @@ Route::group([
     $router->put('articles/{id}', 'ArticleController@update');
     $router->delete('articles/{id}' , 'ArticleController@destroy');
 
+    $router->get('tags', 'TagController@index');
+    $router->get('tags/create', 'TagController@create');
+    $router->post('tags' , 'TagController@store');
+    $router->get('tags/{id}/edit', 'TagController@edit');
+    $router->put('tags/{id}', 'TagController@update');
+    $router->delete('tags/{id}' , 'TagController@destroy');
+
+    $router->get('navs', 'NavController@index');
+    $router->get('navs/create', 'NavController@create');
+    $router->post('navs' , 'NavController@store');
+    $router->get('navs/{id}/edit', 'NavController@edit');
+    $router->put('navs/{id}', 'NavController@update');
+    $router->delete('navs/{id}' , 'NavController@destroy');
+
 });

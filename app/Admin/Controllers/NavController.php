@@ -2,10 +2,8 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Article;
+use App\Models\Nav;
 
-use App\Models\Category;
-use App\Models\Tag;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -13,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class ArticleController extends Controller
+class NavController extends Controller
 {
     use ModelForm;
 
@@ -26,8 +24,7 @@ class ArticleController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('文章列表');
-//            $content->description('description');
+            $content->header('导航管理');
 
             $content->body($this->grid());
         });
@@ -43,8 +40,7 @@ class ArticleController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('导航管理');
 
             $content->body($this->form()->edit($id));
         });
@@ -59,8 +55,7 @@ class ArticleController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('添加文章');
-//            $content->description('description');
+            $content->header('导航管理');
 
             $content->body($this->form());
         });
@@ -73,35 +68,38 @@ class ArticleController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Article::class, function (Grid $grid) {
+        return Admin::grid(Nav::class, function (Grid $grid) {
+//            搜索
             $grid->filter(function($filter){
                 // 去掉默认的id过滤器
                 $filter->disableIdFilter();
                 // 在这里添加字段过滤器
-                $filter->like('title', 'title');
+                $filter->like('title', '导航内容');
             });
-
+//            字段显示
             $grid->id('ID')->sortable();
-            $grid->title('文章标题');
+            $grid->title('导航名称');
+            $grid->url('导航地址');
+//            $grid->is_display('是否显示')->display(function ($value) {
+//                return $value ? '是' : '否';
+//            });
             $states = [
                 'on'  => ['value' => 1, 'text' => '是', 'color' => 'primary'],
                 'off' => ['value' => 0, 'text' => '否', 'color' => 'default'],
             ];
-            $grid->is_display('显示')->switch($states);
-            $grid->is_recommend('推荐')->switch($states);
-            $grid->category_id('分类名称')->display(function ($category_id) {
-                return Category::find($category_id)->title;
-            });
+            $grid->is_display('是否显示')->switch($states);
             $grid->order('排序')->editable();
-            $grid->view_count('查看');
-            $grid->reply_count('回复');
-
-            $grid->actions(function ($actions) {
-                $actions->disableDelete();
+            $grid->created_at('创建时间');
+            $grid->updated_at('更新时间');
+//            禁用默认工具
+            $grid->tools(function ($tools) {
+                // 禁用批量删除按钮
+                $tools->batch(function ($batch) {
+                    $batch->disableDelete();
+                });
             });
-
-            $grid->disableExport();
             $grid->disableRowSelector();
+            $grid->disableExport();
         });
     }
 
@@ -112,18 +110,15 @@ class ArticleController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Article::class, function (Form $form) {
+        return Admin::form(Nav::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
-            $form->select('category_id', '文章分类')->options(Category::selectOptions());
-            $form->select('tag_id', '文章标签')->options(array_pluck(Tag::select('id','title')->display()->get()->toArray(),'title', 'id'));
-            $form->text('title', '文章标题')->rules('required');
-            $form->image('image', '封面图片')->rules('required|image');
-            $form->text('order', '排序')->default(100)->rules('required');
-            $form->radio('is_display', '是否显示')->options(['1' => '是', '0'=> '否'])->default('0');
-            $form->radio('is_recommend', '是否推荐')->options(['1' => '是', '0'=> '否'])->default('0');
-            $form->editor('description', '文章内容')->rules('required');
+            $form->text('title', '导航名称')->rules('required');
+            $form->text('url', '地址');
+            $form->text('description', '导航描述');
+            $form->radio('is_display', '显示')->options(['1' => '是', '0'=> '否'])->default('1');
+            $form->text('order', '排序')->default(100);
 
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');

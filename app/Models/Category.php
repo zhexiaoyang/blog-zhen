@@ -23,4 +23,18 @@ class Category extends Model
     {
         return $this->hasMany(Article::class);
     }
+
+    /**
+     * 重写方法
+     * User: zhangzhen
+     * Date: 2018/7/9 13:59
+     * @return array
+     */
+    public static function selectOptions()
+    {
+        $options = (new static())->buildSelectOptions();
+
+        return collect($options)->all();
+    }
+
 }
