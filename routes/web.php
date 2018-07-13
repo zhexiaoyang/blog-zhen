@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/home')->name('home');
+Route::get('/home', 'HomeController@index')->name('home.index');
+Route::get('article/{article}', 'ArticleController@show')->name('article.show');

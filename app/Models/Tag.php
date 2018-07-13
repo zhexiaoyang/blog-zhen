@@ -15,13 +15,13 @@ class Tag extends Model
         'is_display' => 'boolean',
     ];
 
-    public function skus()
+    public function articles()
     {
         return $this->hasMany(Article::class);
     }
 
     public function scopeDisplay($query)
     {
-        return $query->where('is_display', 1);
+        return $query->where('is_display', true);
     }
 }
