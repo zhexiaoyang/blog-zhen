@@ -24,6 +24,11 @@ class Category extends Model
         return $this->hasMany(Article::class);
     }
 
+    public function scopeDisplay($query)
+    {
+        return $query->where('is_display', true);
+    }
+
     /**
      * 重写方法
      * User: zhangzhen
@@ -32,9 +37,15 @@ class Category extends Model
      */
     public static function selectOptions()
     {
-        $options = (new static())->buildSelectOptions();
+        $options = (new static())->buildSelectOptions(Category::display()->get()->toArray());
 
         return collect($options)->all();
+    }
+
+    public static function selectOptionsArticleList()
+    {
+//        dd((new static())->toTree());
+        return array_pluck(Category::display()->get()->toArray(),'title','id');
     }
 
 }

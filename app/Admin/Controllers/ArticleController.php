@@ -87,12 +87,15 @@ class ArticleController extends Controller
                 'on'  => ['value' => 1, 'text' => '是', 'color' => 'primary'],
                 'off' => ['value' => 0, 'text' => '否', 'color' => 'default'],
             ];
-            $grid->is_display('显示')->switch($states);
-            $grid->is_slider('轮播')->switch($states);
-            $grid->is_recommend('推荐')->switch($states);
-            $grid->category_id('分类名称')->display(function ($category_id) {
-                return Category::find($category_id)->title;
-            });
+            $grid->column('设置')->switchGroup([
+                    'is_display' => '显示',
+                    'is_slider' => '轮播',
+                    'is_recommend' => '推荐',
+                ], $states);
+//            $grid->is_display('显示')->switch($states);
+//            $grid->is_slider('轮播')->switch($states);
+//            $grid->is_recommend('推荐')->switch($states);
+            $grid->category_id('分类名称')->editable('select', Category::selectOptionsArticleList());
             $grid->order('排序')->editable();
             $grid->view_count('查看');
             $grid->reply_count('回复');
