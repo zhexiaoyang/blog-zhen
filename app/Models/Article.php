@@ -13,14 +13,19 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function tag()
+    public function tags()
     {
-        return $this->belongsTo(Tag::class);
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 
     public function scopeDisplay($query)
     {
         return $query->where('is_display', true);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
     }
 
     public function getImageUrlAttribute()
@@ -29,7 +34,8 @@ class Article extends Model
         if (Str::startsWith($this->attributes['image'], ['http://', 'https://'])) {
             return $this->attributes['image'];
         }
-        return \Storage::disk('public')->url($this->attributes['image']);
+//        return \Storage::disk('public')->url($this->attributes['image']);
+        return 'http://'.config('filesystems.disks.qiniu.domains.default').'/'.$this->attributes['image'];
     }
 
 }

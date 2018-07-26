@@ -40,4 +40,11 @@ Route::group([
     $router->put('navs/{id}', 'NavController@update');
     $router->delete('navs/{id}' , 'NavController@destroy');
 
+    $router->get('replies', 'ReplyController@index');
+    $router->get('replies/create', 'ReplyController@create');
+    $router->post('replies' , 'ReplyController@store');
+    $router->get('replies/{id}/edit', 'ReplyController@edit');
+    $router->put('replies/{id}', 'ReplyController@update');
+    $router->delete('replies/{id}' , 'ReplyController@destroy');
+
 });

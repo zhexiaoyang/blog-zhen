@@ -14,3 +14,8 @@
 Route::redirect('/', '/home')->name('home');
 Route::get('/home', 'HomeController@index')->name('home.index');
 Route::get('article/{article}', 'ArticleController@show')->name('article.show');
+Route::get('article/like/{article}', 'ArticleController@like')->name('article.like')->middleware('throttle:10');
+Route::get('category/{category}', 'CategoryController@show')->name('category.show');
+Route::get('tag/{tag}', 'TagController@show')->name('tag.show');
+Route::resource('reply', 'ReplyController', ['only' => ['destroy']]);
+Route::post('reply', 'ReplyController@store')->name('reply.store')->middleware('throttle:3');

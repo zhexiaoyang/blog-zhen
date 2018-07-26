@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Nav;
+use App\Models\Reply;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Exceptions\InvalidRequestException;
@@ -19,12 +21,20 @@ class ArticleController extends Controller
         $article->increment('view_count');
         $prev_article = Article::find($this->getPrevArticleId($article->id));
         $next_article = Article::find($this->getNextArticleId($article->id));
-        $relevants = Article::display()->where('category_id', $article->category_id)->orderBy('id','desc')->paginate(5);
-        $recommends = Article::display()->where('is_recommend', true)->orderBy('id','desc')->paginate(5);
-        $hots = Article::display()->orderBy('view_count','desc')->paginate(5);
-        $tags = Tag::display()->orderBy('id','desc')->get();
+        $relevants = Article::display()->where('category_id', $article->category_id)->where('id', '<>', $article->id)->orderBy('order','desc')->paginate(12);
 
-        return view('article.show', compact('article', 'recommends', 'hots', 'tags', 'prev_article', 'next_article', 'relevants'));
+//        $replies = Reply::display()->where('article_id', $article->id)->where('parent_id', 0)->orderBy('order','asc')->paginate(3);
+//        dd($article->replies[0]->children);
+//        dd($replies);
+        return view('article.show', compact('article',  'prev_article', 'next_article', 'relevants'));
+    }
+
+    public function like(Article $article)
+    {
+        if ( $article->increment('like_count') )
+        {
+            return response($article->like_count, 200);
+        }
     }
 
     protected function getPrevArticleId($id)

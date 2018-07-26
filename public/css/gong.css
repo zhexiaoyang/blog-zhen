@@ -2142,7 +2142,7 @@ a:hover, a:focus {
 .pagesider-menu li.active a, .pagesider-menu li.current_page_item a, .pagesider-menu li.current-menu-item a {
 	color:#444;
 	background-color:#fff;
-	border-left-color:#00a67c;
+	border-left-color:#f46660;
 	margin-right:-1px;
 	position:relative;
 	z-index:2
@@ -2175,7 +2175,7 @@ a:hover, a:focus {
 }
 .page-navbar li.current-menu-item a, .page-navbar li.current-menu-parent a, .page-navbar li.current_page_item a, .page-navbar li.current-post-ancestor a, .page-navbar li ul {
 	background-color:#f7f7f7;
-	border-left-color:#00a67c;
+	border-left-color:#f46660;
 	color:#666
 }
 fieldset {
@@ -2352,7 +2352,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 .btn-info {
 	color:#fff;
-	background-color:#00a67c
+	background-color:#f46660
 }
 .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
 	color:#fff;
@@ -2360,11 +2360,11 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 .btn-inverse {
 	color:#fff;
-	background-color:#11a99b
+	background-color:#f46660
 }
 .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active, .btn-inverse.active, .btn-inverse.disabled, .btn-inverse[disabled] {
 	color:#fff;
-	background-color:#31cfa9
+	background-color:#FA8072
 }
 button.btn, input[type="submit"].btn {
  *padding-top:3px;
@@ -2587,7 +2587,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 .nav-list>.active>a, .nav-list>.active>a:hover, .nav-list>.active>a:focus {
 	color:#fff;
 	text-shadow:0 -1px 0 rgba(0,0,0,0.2);
-	background-color:#00a67c
+	background-color:#f46660
 }
 .nav-list .divider {
  *width:100%;
@@ -2650,7 +2650,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 }
 .nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>.active>a:focus {
 	color:#fff;
-	background-color:#00a67c
+	background-color:#f46660
 }
 .nav-stacked>li {
 	float:none
@@ -2684,8 +2684,8 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	margin-bottom:1px
 }
 .nav .dropdown-toggle .caret {
-	border-top-color:#00a67c;
-	border-bottom-color:#00a67c;
+	border-top-color:#f46660;
+	border-bottom-color:#f46660;
 	margin-top:6px
 }
 .nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {
@@ -2825,7 +2825,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	clear:both
 }
 #header {
-	background:#1abc9c;
+	background:#f46660;
 	position:relative
 }
 .container-inner {
@@ -2863,12 +2863,12 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	margin-top:8px
 }
 .navbar .nav li a:focus, .navbar .nav li a:hover {
-	background-color:#16a085;
+	background-color:#f46660;
 	color:#fff
 }
 .navbar .nav .active a, .navbar .nav .active a:hover, .navbar .nav .active a:focus {
 	color:#fff;
-	background-color:#16a085
+	background-color:#f46660
 }
 .navbar .nav li.current-menu-item a, .navbar .nav li.current-menu-parent a, .navbar .nav li.current_page_item a, .navbar .nav li.current-post-ancestor a {
 	color:#fff;
@@ -2909,7 +2909,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	background-color:#576663
 }
 .navbar .nav li:hover a, .navbar .nav li.current-menu-item a, .navbar .nav li.current-menu-parent a, .navbar .nav li.current_page_item a, .navbar .nav li.current-post-ancestor a {
-	background-color:#16a085
+	background-color:#f46660
 }
 .sub-menu {
 	min-width:130px;
@@ -3068,7 +3068,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 	margin-left:5px;
 	margin-right:5px;
 	margin-top:11px;
-	background-color:#16a085
+	background-color:#f46660
 }
 /*@font-face {
 	font-family: 'winmantun2500678302';
@@ -3132,7 +3132,7 @@ src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e557
 	right:0;
 	padding:16px 19px 16px 19px;
 	height:20px;
-	background:#16a085;
+	background:#f46660;
 	color:#fff;
 	cursor:pointer;
 	-webkit-transition:all .25s ease-out;
@@ -3145,7 +3145,7 @@ src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e557
 }
 .search-expand {
 	display:none;
-	background:#16a085;
+	background:#f46660;
 	position:absolute;
 	top:52px;
 	right:0;
@@ -3230,11 +3230,11 @@ src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e557
 	color:#666
 }
 .pagination ul>li>a:hover, .pagination ul>li>a:focus {
-	background-color:#6fc299;
+	background-color:#FA8072;
 	color:#fff
 }
 .pagination ul>.active>a, .pagination ul>.active>span {
-	background-color:#00a67c;
+	background-color:#f46660;
 	color:#fff
 }
 .pagination ul>.active>a, .pagination ul>.active>span {
@@ -3249,14 +3249,14 @@ src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e557
 	padding-top:4px
 }
 .ias_trigger a {
-	background-color:#11a99b;
+	background-color:#f46660;
 	display:block;
 	line-height:35px;
 	text-align:center;
 	color:#eee
 }
 .ias_trigger a:hover {
-	background-color:#00a67c;
+	background-color:#f46660;
 	color:#fff
 }
 .pagination-loading {
@@ -3277,11 +3277,11 @@ src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e557
 	margin:0 1px
 }
 .commentnav .current {
-	background-color:#00a67c;
+	background-color:#f46660;
 	color:#fff
 }
 .commentnav a:hover {
-	background-color:#6fc299;
+	background-color:#FA8072;
 	color:#fff
 }
 .rollto {
@@ -3928,7 +3928,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	right:20px;
 	top:23px;
 	color:#fff;
-	background-color:#00a67c;
+	background-color:#f46660;
 	padding:1px 8px 0;
 	min-width:14px;
 	text-align:center
@@ -3936,7 +3936,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 .comm i {
 	display:inline-block;
 	border:5px dotted;
-	border-color:#00a67c transparent;
+	border-color:#f46660 transparent;
 	border-bottom-width:0;
 	border-left-width:0;
 	position:absolute;
@@ -4095,7 +4095,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	margin:20px -20px 20px -24px;
 	padding:10px 20px 9px 10px;
 	line-height:18px;
-	border-left:4px solid #00a67c;
+	border-left:4px solid #f46660;
 	background-color:#fbfbfb
 }
 .article-content h3 {
@@ -4620,7 +4620,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 .widget_calendar table tbody td a {
 	display:block;
 	margin:0 3px;
-	background-color:#00a67c;
+	background-color:#f46660;
 	color:#fff
 }
 .widget_calendar table tbody td a:hover {
@@ -4727,7 +4727,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	background-color:#b433ff
 }
 .d_tags a:nth-child(9n+6) {
-	background-color:#00a67c
+	background-color:#f46660
 }
 .d_tags a:nth-child(9n+7) {
 	background-color:#b37333
@@ -4740,7 +4740,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	opacity:.7;
 	filter:alpha(opacity=80);
 	color:#fff;
-	background-color:#00a67c;
+	background-color:#f46660;
 	display:inline-block;
 	margin:0 5px 5px 0;
 	padding:2px 6px;
@@ -5801,14 +5801,14 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	width:84px;
 	height:32px;
 	border:0;
-	background:#1abc9c;
+	background:#f46660;
 	color:#fff;
 	letter-spacing:2px;
 	font-size:15px;
 	font-family:"Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif !important
 }
 .d_subscribe .rssbutton:hover {
-	background-color:#16a085
+	background-color:#f46660
 }
 #wowslider-container1 {
 	zoom:1;
@@ -6077,7 +6077,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 }
 .footer {
 	background:#333;
-	border-top:8px solid #00a67c;
+	border-top:8px solid #f46660;
 	-webkit-box-shadow:0 -5px 0 rgba(0,0,0,.1);
 	-moz-box-shadow:0 -8px 0 rgba(0,0,0,.1);
 	box-shadow:0 -8px 0 rgba(0,0,0,.1);
@@ -6118,7 +6118,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	background:#81c1f2
 }
 .weixins {
-	background:#6fc299
+	background:#FA8072
 }
 .weixin-popover {
 	position:absolute;
@@ -6203,7 +6203,7 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	background-color:#fd8c84
 }
 .label-2 {
-	background-color:#6fc299
+	background-color:#FA8072
 }
 .label-3 {
 	background-color:#81c1f2
@@ -6233,4 +6233,33 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 .fenye a:hover span {
 	background-color:#fd9790;
 	color:#fff
+}
+
+.about {
+	background: #FFF url(/images/banner.png) no-repeat top center;
+	overflow: hidden;
+}
+.avatar {
+	margin: 80px auto 20px;
+	width: 100px
+}
+.avatar img {
+	width: 100px;
+	border-radius: 50%
+}
+.abname {
+	color: #3f3f3f;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 10px;
+	text-align: center
+}
+.abposition {
+	color: #1abc9c;
+	text-align: center
+}
+.abtext {
+	padding: 20px 40px;
+	color: #9a9a9a;
+	line-height: 26px
 }

@@ -88,6 +88,7 @@ class ArticleController extends Controller
                 'off' => ['value' => 0, 'text' => '否', 'color' => 'default'],
             ];
             $grid->is_display('显示')->switch($states);
+            $grid->is_slider('轮播')->switch($states);
             $grid->is_recommend('推荐')->switch($states);
             $grid->category_id('分类名称')->display(function ($category_id) {
                 return Category::find($category_id)->title;
@@ -96,9 +97,9 @@ class ArticleController extends Controller
             $grid->view_count('查看');
             $grid->reply_count('回复');
 
-            $grid->actions(function ($actions) {
-                $actions->disableDelete();
-            });
+//            $grid->actions(function ($actions) {
+//                $actions->disableDelete();
+//            });
 
             $grid->disableExport();
             $grid->disableRowSelector();
@@ -117,7 +118,7 @@ class ArticleController extends Controller
             $form->display('id', 'ID');
 
             $form->select('category_id', '文章分类')->options(Category::selectOptions());
-            $form->select('tag_id', '文章标签')->options(array_pluck(Tag::select('id','title')->display()->get()->toArray(),'title', 'id'));
+            $form->listbox('tags','文章标签')->options(Tag::display()->get()->pluck('title', 'id'))->rules('required');
             $form->text('title', '文章标题')->rules('required');
             $form->image('image', '封面图片')->rules('required|image');
             $form->text('order', '排序')->default(100)->rules('required');

@@ -25,8 +25,7 @@ class NavController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('导航管理');
-
-            $content->body($this->grid());
+            $content->body(Nav::tree());
         });
     }
 
@@ -114,14 +113,27 @@ class NavController extends Controller
 
             $form->display('id', 'ID');
 
+            $form->select('parent_id', '上级分类')->options(Nav::selectOptions());
             $form->text('title', '导航名称')->rules('required');
-            $form->text('url', '地址');
+            $form->icon('icon', '图标')->default('fa-bars')->rules('required')->help($this->iconHelp());
+            $form->text('url', '地址')->rules('required');
             $form->text('description', '导航描述');
             $form->radio('is_display', '显示')->options(['1' => '是', '0'=> '否'])->default('1');
+            $form->radio('is_roate', '旋转')->options(['1' => '是', '0'=> '否'])->default('0');
             $form->text('order', '排序')->default(100);
 
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
         });
+    }
+
+    /**
+     * Help message for icon field.
+     *  laravel-admin MenuController拷贝的
+     * @return string
+     */
+    protected function iconHelp()
+    {
+        return '更更多图标请参考 <a href="http://fontawesome.io/icons/" target="_blank">http://fontawesome.io/icons/</a>';
     }
 }
