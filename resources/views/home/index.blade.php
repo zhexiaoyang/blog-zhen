@@ -76,10 +76,11 @@
         @include('common._contract_me')
         <div class="widget d_subscribe">
             <div class="about">
-                <div class="avatar"><img src="/images/avatar.jpg" alt=""></div>
-                <p class="abname">dancesmile | 杨青</p>
-                <p class="abposition">Web前端设计师、网页设计</p>
-                <div class="abtext"> 一个80后草根女站长！09年入行。一直潜心研究web前端技术，一边工作一边积累经验，分享一些个人博客模板，以及SEO优化等心得。 </div>
+                <div class="avatar"><img src="{{ asset('/images/avatar.jpg') }}" alt=""></div>
+                <p class="abname">网名 ：这小样谁对象</p>
+                <p class="abname">Q Q ：358282005&nbsp</p>
+                <p class="abname">邮箱 ：zhangzhen@yeah.net</p>
+                <div class="abtext"> 一个擦边90后！2012年07毕业于大连工业大学，而后当了一名电工。2013年转行做了一名程序员。 </div>
             </div>
         </div>
         {{--@include('common._subscribe_to')--}}
