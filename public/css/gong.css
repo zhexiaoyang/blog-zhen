@@ -3073,7 +3073,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 /*@font-face {
 	font-family: 'winmantun2500678302';
 src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/8c03d857827046928e6c58fd6ed72379/winmantun25006.png#winmantun25006') format('svg');}
-	
+
 @font-face {
 font-family: 'ruibo78303';
 src: url('http://www.youziku.com/CSS/webfonts/2014-10-17/6ea0210f1cd842d99e0e5575c6362f50/ruibo.png#ruibo') format('svg');
@@ -6263,3 +6263,8 @@ a.label-inverse:hover .label-arrow, a.badge-inverse:hover .label-arrow {
 	color: #9a9a9a;
 	line-height: 26px
 }
+.ft{background: #202020;color: #959595;font-size: 16px;margin-top: 60px;}
+.ft .ft_top{padding-top: 15px;}
+.ft .ft_top dl dt{font-size: 18px;color: #fff;}
+.ft .ft_top dl dd,.ft .ft_top .ft_text{line-height: 30px;}
+.ft .ft_bottom{background: #111;padding-top:15px;padding-bottom: 15px;color: #555555;border-top: 1px solid #303030;font-size: 14px;}

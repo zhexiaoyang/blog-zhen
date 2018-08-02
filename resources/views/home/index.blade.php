@@ -79,7 +79,7 @@
                 <div class="avatar"><img src="{{ asset('/images/avatar.jpg') }}" alt=""></div>
                 <p class="abname">网名 ：这小样谁对象</p>
                 <p class="abname">Q Q ：358282005&nbsp</p>
-                <p class="abname">邮箱 ：zhangzhen@yeah.net</p>
+                <p class="abname">邮箱 ：358282005@qq.com</p>
                 <div class="abtext"> 一个擦边90后！2012年07毕业于大连工业大学，而后当了一名电工。2013年转行做了一名程序员。 </div>
             </div>
         </div>
