@@ -21,7 +21,7 @@ class ArticleController extends Controller
         $article->increment('view_count');
         $prev_article = Article::find($this->getPrevArticleId($article->id));
         $next_article = Article::find($this->getNextArticleId($article->id));
-        $relevants = Article::display()->where('category_id', $article->category_id)->where('id', '<>', $article->id)->orderBy('order','desc')->paginate(12);
+        $relevants = Article::display()->where('category_id', $article->category_id)->where('id', '<>', $article->id)->orderBy('order','desc')->paginate(config('index_article_numbers'));
 
 //        $replies = Reply::display()->where('article_id', $article->id)->where('parent_id', 0)->orderBy('order','asc')->paginate(3);
 //        dd($article->replies[0]->children);

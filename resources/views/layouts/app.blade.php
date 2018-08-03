@@ -26,12 +26,13 @@
         <div class="speedbar">
             <div class="toptip">
                 <strong class="text-success"><i class="fa fa-volume-up"></i></strong>
-                请在Chrome、Firefox等现代浏览器浏览本站。另外提供付费解决DEDE主题修改定制等技术服务，如果需要请
-                <code>
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=81946698&site=qq&menu=yes" rel="external nofollow" target="_blank" title="联系QQ">
-                        <i class="fa fa-qq"></i>点击</a>
-                </code>
-                加我 QQ 说你的需求。
+                {{ config('web_notice') }}
+                {{--请在Chrome、Firefox等现代浏览器浏览本站。另外提供付费解决DEDE主题修改定制等技术服务，如果需要请--}}
+                {{--<code>--}}
+                    {{--<a href="http://wpa.qq.com/msgrd?v=3&uin=81946698&site=qq&menu=yes" rel="external nofollow" target="_blank" title="联系QQ">--}}
+                        {{--<i class="fa fa-qq"></i>点击</a>--}}
+                {{--</code>--}}
+                {{--加我 QQ 说你的需求。--}}
             </div>
         </div>
         @yield('content')
