@@ -21,4 +21,17 @@ class Nav extends Model
     {
         return $query->where('is_display', true);
     }
+
+    /**
+     * 重写方法
+     * User: zhangzhen
+     * Date: 2018/7/9 13:59
+     * @return array
+     */
+    public static function selectOptions()
+    {
+        $options = (new static())->buildSelectOptions(Nav::display()->get()->toArray());
+
+        return collect($options)->prepend('顶级导航', 0)->all();
+    }
 }
