@@ -39,7 +39,7 @@ class Category extends Model
     {
         $options = (new static())->buildSelectOptions(Category::display()->get()->toArray());
 
-        return collect($options)->all();
+        return collect($options)->prepend('顶级分类', 0)->all();
     }
 
     public static function selectOptionsArticleList()
