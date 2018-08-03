@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home.index');
+//Route::get('/')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('article/{article}', 'ArticleController@show')->name('article.show');
 Route::get('article/like/{article}', 'ArticleController@like')->name('article.like')->middleware('throttle:10');
 Route::get('category/{category}', 'CategoryController@show')->name('category.show');
