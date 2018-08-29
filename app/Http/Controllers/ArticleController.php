@@ -23,10 +23,12 @@ class ArticleController extends Controller
         $next_article = Article::find($this->getNextArticleId($article->id));
         $relevants = Article::display()->where('category_id', $article->category_id)->where('id', '<>', $article->id)->orderBy('order','desc')->paginate(config('index_article_numbers'));
 
+        $replies = Reply::display()->orderBy('id','desc')->paginate(10);
+
 //        $replies = Reply::display()->where('article_id', $article->id)->where('parent_id', 0)->orderBy('order','asc')->paginate(3);
 //        dd($article->replies[0]->children);
 //        dd($replies);
-        return view('article.show', compact('article',  'prev_article', 'next_article', 'relevants'));
+        return view('article.show', compact('article',  'prev_article', 'next_article', 'relevants', 'replies'));
     }
 
     public function like(Article $article)

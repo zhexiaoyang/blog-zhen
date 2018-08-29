@@ -125,7 +125,7 @@
     <aside class="sidebar">
         @include('common._contract_me')
 
-        @include('common._subscribe_to')
+        {{--@include('common._subscribe_to')--}}
 
         @include('article._recommends')
 

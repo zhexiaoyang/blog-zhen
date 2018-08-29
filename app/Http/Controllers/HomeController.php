@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Nav;
+use App\Models\Reply;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,8 @@ class HomeController extends Controller
 
         $sliders = Article::display()->where('is_slider',true)->orderBy('id','desc')->paginate(4);
 
-        return view('home.index', compact('articles', 'sliders', 'likes'));
+        $replies = Reply::display()->orderBy('id','desc')->paginate(10);
+
+        return view('home.index', compact('articles', 'sliders', 'likes', 'replies'));
     }
 }

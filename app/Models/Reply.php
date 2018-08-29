@@ -21,4 +21,9 @@ class Reply extends Model
     {
         return $query->where('is_display', true);
     }
+
+    public function children()
+    {
+        return $this->hasMany(static::class, $this->parentColumn)->whereIs_display(1);
+    }
 }

@@ -98,6 +98,7 @@ class ReplyController extends Controller
                 'off' => ['value' => 0, 'text' => '否', 'color' => 'default'],
             ];
             $grid->article()->id('文章ID');
+            $grid->parent_id('父级ID');
             $grid->article()->title('文章标题');
             $grid->nickname('昵称');
             $grid->email('邮箱');

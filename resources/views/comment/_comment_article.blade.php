@@ -3,7 +3,7 @@
         @foreach($replies as $reply)
         <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-{{ $reply->id }}">
             <div class="c-avatar">
-                <img class="avatar avatar-54 photo" height="54" width="54" src="{{ asset('images/default.png') }}" style="display: block;">
+                <img class="avatar avatar-54 photo" height="54" width="54" src="{{ asset('images/default.png') }}" style="display: block;margin: 0;">
                 <div class="c-main" id="div-comment-{{ $reply->id }}">
                     {{ $reply->content }}
                     <div class="c-meta">
