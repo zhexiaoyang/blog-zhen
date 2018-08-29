@@ -125,6 +125,7 @@ class ArticleController extends Controller
             $form->text('title', '文章标题')->rules('required');
             $form->image('image', '封面图片')->rules('required|image');
             $form->text('order', '排序')->default(100)->rules('required');
+            $form->radio('is_slider', '是否轮播')->options(['1' => '是', '0'=> '否'])->default('0');
             $form->radio('is_display', '是否显示')->options(['1' => '是', '0'=> '否'])->default('0');
             $form->radio('is_recommend', '是否推荐')->options(['1' => '是', '0'=> '否'])->default('0');
             $form->editor('description', '文章内容')->rules('required');

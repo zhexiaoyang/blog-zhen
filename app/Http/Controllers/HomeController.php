@@ -15,7 +15,7 @@ class HomeController extends Controller
 
         $likes = Article::display()->orderBy('like_count','desc')->paginate(5);
 
-        $sliders = Article::display()->orderBy('is_slider','desc')->paginate(4);
+        $sliders = Article::display()->where('is_slider',true)->orderBy('id','desc')->paginate(4);
 
         return view('home.index', compact('articles', 'sliders', 'likes'));
     }
