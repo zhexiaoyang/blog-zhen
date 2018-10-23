@@ -24,18 +24,18 @@
                 </ul>
                 @endif
             </li>
-                <li style="float:right;">
-                    <div class="toggle-search"><i class="fa fa-search"></i></div>
-                    <div class="search-expand" style="display: none;">
-                        <div class="search-expand-inner">
-                            <form method="get" class="searchform themeform" onsubmit="location.href='https://cuiqingcai.com/?s=' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;" action="/">
-                                <div>
-                                    <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='search...';" onfocus="if(this.value=='search...')this.value='';" value="search...">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </li>
+                {{--<li style="float:right;">--}}
+                    {{--<div class="toggle-search"><i class="fa fa-search"></i></div>--}}
+                    {{--<div class="search-expand" style="display: none;">--}}
+                        {{--<div class="search-expand-inner">--}}
+                            {{--<form method="get" class="searchform themeform" onsubmit="location.href='https://cuiqingcai.com/?s=' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;" action="/">--}}
+                                {{--<div>--}}
+                                    {{--<input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='search...';" onfocus="if(this.value=='search...')this.value='';" value="search...">--}}
+                                {{--</div>--}}
+                            {{--</form>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</li>--}}
             @endforeach
         </ul>
         <div class="screen-mini">

@@ -80,7 +80,7 @@
                 <p class="abname">网名 ：這䒕漾誰對潒</p>
                 <p class="abname">Q Q ：358282005&nbsp</p>
                 <p class="abname">邮箱 ：358282005@qq.com</p>
-                <div class="abtext"> 一个擦边90后！2012年07毕业于大连工业大学，而后当了一名电工。2013年转行做了一名程序员。 </div>
+                <div class="abtext"> 人生当自勉，学习需坚持。从这一开始，我依旧是我，只是心境在不同。不论今后的路如何，我都在心底默默鼓励自己，坚持不懈，等待那一刻破茧的美！ </div>
             </div>
         </div>
         {{--@include('common._subscribe_to')--}}
