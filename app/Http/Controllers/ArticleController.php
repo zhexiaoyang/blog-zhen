@@ -25,6 +25,10 @@ class ArticleController extends Controller
 
         $replies = Reply::display()->orderBy('id','desc')->paginate(10);
 
+        $a = new \Parsedown();
+
+        $article->description = $a->setBreaksEnabled(true)->text($article->description);
+
 //        $replies = Reply::display()->where('article_id', $article->id)->where('parent_id', 0)->orderBy('order','asc')->paginate(3);
 //        dd($article->replies[0]->children);
 //        dd($replies);

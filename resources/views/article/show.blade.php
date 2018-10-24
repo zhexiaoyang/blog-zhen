@@ -138,10 +138,10 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    {{--<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>--}}
+    {{--<script>hljs.initHighlightingOnLoad();</script>--}}
     <script>
-        $('div.pagination').show();
+        // $('div.pagination').show();
     </script>
     <script>
         window._deel = {

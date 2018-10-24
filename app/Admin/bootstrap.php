@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Extensions\SimpleMDE;
 use App\Admin\Extensions\WangEditor;
 use Encore\Admin\Form;
 
@@ -24,4 +25,5 @@ use Encore\Admin\Form;
 Encore\Admin\Form::forget(['map', 'editor']);
 //Encore\Admin\Form::forget(['map']);
 
-Form::extend('editor', WangEditor::class);
+//Form::extend('editor', WangEditor::class);
+Form::extend('editor', SimpleMDE::class);
