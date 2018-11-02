@@ -140,11 +140,17 @@ class ArticleController extends Controller
     public function uploadImage(Request $request)
     {
         if ($file = $request->file('file')) {
-            $disk = QiniuStorage::disk('qiniu');
-            $url = $disk->put('images',$file);
-            $data = ['filename' => 'http://img.zhenblog.625buy.com/'.$url];
+
+            $extension = strtolower($file->getClientOriginalExtension());
+            if ($extension && in_array($extension, ["png", "jpg", "gif", 'jpeg'])) {
+                $disk = QiniuStorage::disk('qiniu');
+                $url = $disk->put('images',$file);
+                $data = ['filename' => config('app.img_url').$url];
+            }else{
+                $data['error'] = '格式不正确';
+            }
         } else {
-            $data['error'] = 'Error while uploading file';
+            $data['error'] = '没有收到图片';
         }
         return $data;
     }
