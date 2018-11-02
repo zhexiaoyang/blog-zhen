@@ -12,6 +12,8 @@ use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
+use Illuminate\Http\Request;
+use zgldh\QiniuStorage\QiniuStorage;
 
 class ArticleController extends Controller
 {
@@ -133,5 +135,17 @@ class ArticleController extends Controller
             $form->display('created_at', '创建时间');
             $form->display('updated_at', '更新时间');
         });
+    }
+
+    public function uploadImage(Request $request)
+    {
+        if ($file = $request->file('file')) {
+            $disk = QiniuStorage::disk('qiniu');
+            $url = $disk->put('images',$file);
+            $data = ['filename' => 'http://img.zhenblog.625buy.com/'.$url];
+        } else {
+            $data['error'] = 'Error while uploading file';
+        }
+        return $data;
     }
 }

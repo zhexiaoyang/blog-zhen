@@ -47,4 +47,5 @@ Route::group([
     $router->put('replies/{id}', 'ReplyController@update');
     $router->delete('replies/{id}' , 'ReplyController@destroy');
 
+    $router->post('/upload_image', 'ArticleController@uploadImage')->name('upload_image');
 });
