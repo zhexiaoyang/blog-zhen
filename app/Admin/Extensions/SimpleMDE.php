@@ -27,13 +27,12 @@ class SimpleMDE extends Field
             autosave: {
                 enabled: true,
                 delay: 5000,
-                unique_id: '{$this->id}'
             },
             forceSync: true
         });
         
         inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, {
-            uploadUrl: 'http://zhenblog.test/admin/upload_image',
+            uploadUrl: LA.upload_image,
             extraParams: {
               '_token': LA.token,
             },
