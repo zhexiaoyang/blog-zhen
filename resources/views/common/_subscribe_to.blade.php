@@ -1,7 +1,7 @@
-<div class="widget d_subscribe">
-    <div class="title">
-        <h2> 邮件订阅 </h2>
-    </div>
+{{--<div class="widget d_subscribe">--}}
+    {{--<div class="title">--}}
+        {{--<h2> 邮件订阅 </h2>--}}
+    {{--</div>--}}
     {{--<form action="http://list.qq.com/cgi-bin/qf_compose_send" target="_blank"--}}
           {{--method="post">--}}
         {{--<p> 填写您的邮件地址，订阅更多的精彩内容： </p>--}}
@@ -12,4 +12,4 @@
                {{--type="email">--}}
         {{--<input class="rssbutton" value="订阅" type="submit">--}}
     {{--</form>--}}
-</div>
+{{--</div>--}}
