@@ -35,7 +35,7 @@ class Article extends Model
             return $this->attributes['image'];
         }
 //        return \Storage::disk('public')->url($this->attributes['image']);
-        return 'http://'.config('filesystems.disks.qiniu.domains.default').'/'.$this->attributes['image'];
+        return 'https://'.config('filesystems.disks.qiniu.domains.default').'/'.$this->attributes['image'];
     }
 
 }
