@@ -45,12 +45,7 @@ return [
     |--------------------------------------------------------------------------
     | 后台是否使用https
     */
-    'https' => env('ADMIN_HTTPS', false),
-
-    /*
-     * Use `https`.
-     */
-    'secure' => false,
+    'secure' => env('ADMIN_HTTPS', false),
 
     /*
      * Laravel-admin auth setting.
