@@ -66,9 +66,9 @@ return [
         'qiniu' => [
             'driver'  => 'qiniu',
             'domains' => [
-                'default'   => 'img.zhenblog.625buy.com', //你的七牛域名
-                'https'     => 'zhenblog.625buy.com',         //你的HTTPS域名
-                'custom'    => 'img.zhenblog.625buy.com' //Useless 没啥用，请直接使用上面的 default 项
+                'default'   => 'img.blog.buoly.com', //你的七牛域名
+                'https'     => 'blog.buoly.com',         //你的HTTPS域名
+                'custom'    => 'img.blog.buoly.com' //Useless 没啥用，请直接使用上面的 default 项
             ],
             'access_key'=> 'Eg6_RaWqmLTuws0arELz1vz33XkZf1FBdQZhlvt0',  //AccessKey
             'secret_key'=> 'Hu9Wc0SWV3NRc58yCthFM5V2yKL6cRf_SIYE1H2o',  //SecretKey
